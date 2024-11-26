@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/todo"
+        android:layout_gravity="center"
+        android:hint="TODO list:"
+        android:textSize="25dp"
+        />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputField"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:hint="Enter your task"
+        android:inputType="text"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:hint="Submit"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/todo_list"
+        android:divider="@color/black"
+        android:dividerHeight="2dp"
+        />
+
+</LinearLayout>
