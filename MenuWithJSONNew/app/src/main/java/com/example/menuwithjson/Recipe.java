@@ -21,6 +21,18 @@ public class Recipe implements Serializable {
         this.dishType = dishType;
     }
 
+    public Recipe(JSONObject json) {
+        try {
+            this.name = json.getString(Constants.RECIPE_NAME_TAG);
+            this.instructions = json.getString(Constants.RECIPE_INSTRUCTIONS_TAG);
+            this.dishType = json.getString(Constants.RECIPE_DISH_TYPE_TAG);
+            this.isFavorite = json.getBoolean(Constants.RECIPE_IS_FAVORITE_TAG);
+            this.isVegan = json.getBoolean(Constants.RECIPE_IS_VEGAN_TAG);
+        } catch (JSONException e) {
+            throw new RuntimeException("Error parsing Recipe from JSON", e);
+        }
+    }
+
     public String getDishType() {
         return dishType;
     }

@@ -18,9 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -48,10 +50,6 @@ public class CreateRecipe extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         initializeViews();
-        Intent intent = getIntent();
-        if (intent != null && intent.hasExtra(Constants.USERNAME_TAG)) {
-            username = intent.getStringExtra(Constants.USERNAME_TAG);
-        }
 
         // Set up a spinner for the dish type
         dishTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -127,8 +125,80 @@ public class CreateRecipe extends AppCompatActivity {
 
     }
 
-    // Save all accounts
-    public void saveAccounts(){
+    public void initializeViews() {
+        nameEditText = findViewById(R.id.nameEditText);
+        instructionsEditText = findViewById(R.id.instructionsEditText);
+        dishTypeSpinner = findViewById(R.id.dishTypeSpinner);
+        veganCheckBox = findViewById(R.id.veganCheckBox);
+    }
+
+    public ArrayList<UserInfo> getUsersFromJSON(){
+        users = new ArrayList<>();
+        try{
+            FileInputStream fileInputStream = new FileInputStream(Constants.USERS_PATH);
+            int size = fileInputStream.available();
+            byte[] buffer = new byte[size];
+            String json = new String(buffer, StandardCharsets.UTF_8);
+            fileInputStream.close();
+
+            JSONArray usersJSONArray = new JSONArray(json);
+
+            for (int i = 0; i < usersJSONArray.length(); i++){
+                JSONObject jsonObject = usersJSONArray.getJSONObject(i);
+                UserInfo newUser = new UserInfo(jsonObject);
+
+                users.add(newUser);
+            }
+
+            return users;
+        } catch (IOException | JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void saveUsers(){
+        users = getUsersFromJSON();
+        try{
+            JSONArray jsonArray = new JSONArray();
+
+            for (UserInfo user : users){
+                jsonArray.put(user.toJSON());
+            }
+
+            FileOutputStream fileOutputStream = new FileOutputStream(Constants.USERS_PATH);
+            fileOutputStream.write(jsonArray.toString().getBytes(StandardCharsets.UTF_8));
+            fileOutputStream.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem create_recipe = menu.findItem(R.id.create_recipe);
+        MenuItem favorite = menu.findItem(R.id.favorite);
+        MenuItem log_out = menu.findItem(R.id.log_out);
+
+        log_out.setTitle("Log out");
+        create_recipe.setTitle("Go Back");
+        favorite.setTitle("Submit");
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.log_out){
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*    // Save all accounts
+    public void saveAccounts(ArrayList<UserInfo> users){
         try{
             JSONArray jsonArray = new JSONArray();
             for (UserInfo user : users) {
@@ -144,12 +214,7 @@ public class CreateRecipe extends AppCompatActivity {
 
     }
 
-    public void initializeViews() {
-        nameEditText = findViewById(R.id.nameEditText);
-        instructionsEditText = findViewById(R.id.instructionsEditText);
-        dishTypeSpinner = findViewById(R.id.dishTypeSpinner);
-        veganCheckBox = findViewById(R.id.veganCheckBox);
-    }
+
 
     // Read all the accounts and return an array list of them
     public ArrayList<UserInfo> getAllUsers() {
@@ -208,8 +273,17 @@ public class CreateRecipe extends AppCompatActivity {
                 users = getAllUsers(); // Never be null
 
                 // We need the current UserInfo account
+                UserInfo currentUserName = null;
+                username = users.get(0).getUserName();
+                Intent intent = getIntent();
+                if (intent != null && intent.hasExtra(Constants.USERNAME_TAG)) {
+                    username = intent.getStringExtra(Constants.USERNAME_TAG);
+                }
+
                 for (UserInfo user : users) {
+                    Toast.makeText(this, user.getUserName(), Toast.LENGTH_SHORT).show();
                     if (user.getUserName().equals(username)) {
+                        Toast.makeText(this, username + " dxasffaasd", Toast.LENGTH_SHORT).show();
                         currentUserName = user;
                     }
                 }
@@ -223,22 +297,32 @@ public class CreateRecipe extends AppCompatActivity {
                 // dishType already entered by the user or the sys
 
                 // We need to check if there is a recipe with the same name
-                for (int i = 0; i < currentUserName.getRecipes().size(); i++) {
-                    if (currentUserName.getRecipes().get(i).getName().equals(recipeName)) {
-                        Toast.makeText(CreateRecipe.this, "Recipe already exists", Toast.LENGTH_SHORT).show();
-                        return super.onOptionsItemSelected(item);
+                if (currentUserName != null) {
+                    for (int i = 0; i < currentUserName.getRecipes().size(); i++) {
+                        if (currentUserName.getRecipes().get(i).getName().equals(recipeName)) {
+                            Toast.makeText(CreateRecipe.this, "Recipe already exists", Toast.LENGTH_SHORT).show();
+                            return super.onOptionsItemSelected(item);
+                        }
                     }
                 }
 
                 // Add the new recipe
                 recipe = new Recipe(recipeName, instructions, isFavorite, isVegan, dishType);
-                currentUserName.getRecipes().add(recipe);
+
+                ArrayList<UserInfo> users1 = new ArrayList<>();
+
+                for (UserInfo user : users) {
+                    if (user.getUserName().equals(username)){
+                        user.addRecipe(recipe);
+                    }
+                    users1.add(user);
+                }
 
                 // Save all the accounts, and their content
-                saveAccounts();
+                saveAccounts(users1);
 
                 // Go back to the main activity
-                Intent intent = new Intent(CreateRecipe.this, MainActivity.class);
+                intent = new Intent(CreateRecipe.this, MainActivity.class);
                 intent.putExtra(Constants.USERNAME_TAG, username);
                 startActivity(intent);
             }
@@ -246,5 +330,5 @@ public class CreateRecipe extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

@@ -141,13 +141,9 @@ public class LogIn extends AppCompatActivity {
             fileInputStream.read(buffer);
             fileInputStream.close();
 
-            // Parse the JSON file into a JSONObject
+            // Parse the JSON file into a JSONArray
             String json = new String(buffer, StandardCharsets.UTF_8);
-            JSONObject jsonObject = new JSONObject(json);
-
-
-            // Get the JSON array from the JSON object
-            JSONArray jsonArray = jsonObject.getJSONArray(Constants.USER_TAG);
+            JSONArray jsonArray = new JSONArray(json);
 
             // Flag to track username existence
             boolean userFound = false;

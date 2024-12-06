@@ -20,6 +20,24 @@ public class UserInfo {
             this.recipes = recipes;
     }
 
+    public UserInfo(JSONObject newUser) {
+        try {
+            this.userName = newUser.getString(Constants.USERNAME_TAG);
+            this.password = newUser.getString(Constants.PASSWORD_TAG);
+
+            this.recipes = new ArrayList<>();
+            JSONArray recipesArray = newUser.getJSONArray(Constants.RECIPE_TAG); // Fetch the recipes array
+
+            for (int i = 0; i < recipesArray.length(); i++) {
+                JSONObject recipeJSON = recipesArray.getJSONObject(i);
+                this.recipes.add(new Recipe(recipeJSON)); // Use the Recipe(JSONObject) constructor
+            }
+        } catch (JSONException e) {
+            throw new RuntimeException("Error parsing UserInfo from JSON", e);
+        }
+    }
+
+
     public void addRecipe(Recipe recipe){
         this.recipes.add(recipe);
     }
