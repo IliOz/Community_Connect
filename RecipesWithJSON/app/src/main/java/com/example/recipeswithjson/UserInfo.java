@@ -38,6 +38,25 @@ public class UserInfo implements Serializable {
         }
     }
 
+    public JSONObject toJSONObject(){
+        try{
+            JSONObject userInfoObject = new JSONObject();
+            userInfoObject.put(Constants.USER_NAME, this.username);
+            userInfoObject.put(Constants.PASSWORD, this.password);
+
+            JSONArray recipesArray = new JSONArray();
+            for (int i = 0; i < this.recipes.size(); i++) {
+                JSONObject recipeObject = this.recipes.get(i).toJSONObject();
+                recipesArray.put(recipeObject);
+            }
+            userInfoObject.put(Constants.RECIPES, recipesArray);
+
+            return userInfoObject;
+        } catch (JSONException e) {
+            return null;
+        }
+    }
+
     public String getPassword() {
         return this.password;
     }

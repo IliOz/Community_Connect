@@ -1,0 +1,13 @@
+<!-- res/drawable/bg_starry_night.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path android:fillColor="#1A003366" android:pathData="M0,0h200v200h-200z"/> <!-- Dark blue -->
+    <!-- Stars -->
+    <item android:drawable="@drawable/search_background_glow" android:top="2dp"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M30,50h2v2h-2z"/>
+    <path android:fillColor="#FFFFFF" android:pathData="M80,20h2v2h-2z"/>
+    <!-- Add 15-20 more tiny squares -->
+</vector>

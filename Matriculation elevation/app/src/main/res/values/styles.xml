@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="toolbarStyle">@style/AppToolbar</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+    </style>
+
+    <style name="AppToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/ToolbarTitleStyle</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/purple</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="HeadlineTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BodyTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+
+    <!-- Button Style for the Check Answer Button -->
+    <style name="CheckAnswerButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/rounded_button</item> <!-- Reference drawable -->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <!-- Card Style for Correct/Incorrect Question -->
+    <style name="CardCorrect" parent="Widget.MaterialComponents.CardView">
+        <item name="android:backgroundTint">@color/green</item> <!-- Green for correct -->
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="CardIncorrect" parent="Widget.MaterialComponents.CardView">
+        <item name="android:backgroundTint">@color/red_50</item> <!-- Red for incorrect -->
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <!-- Popup Window Style -->
+    <style name="PopupWindowStyle">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:padding">24dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">8dp</item> <!-- Add shadow to popup -->
+    </style>
+
+
+    <!-- Base Theme -->
+    <style name="Theme.MyApp" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">@color/purple</item>
+        <item name="colorPrimaryVariant">@color/pink_50</item>
+        <item name="colorAccent">@color/teal</item>
+    </style>
+
+    <!-- Style for Question Cards -->
+    <style name="QuestionCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:radius">8dp</item>
+    </style>
+
+    <!-- Style for Question Text -->
+    <style name="QuestionText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Rounded Button (Alternative) -->
+    <style name="RoundedButton">
+        <item name="android:background">@drawable/rounded_corner_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="GameCard">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardElevation">6dp</item>
+    </style>
+
+    <style name="GameHeader">
+        <item name="android:textColor">#FFFF00</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="GameToolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">#FFFFFF</item>
+    </style>
+
+    <style name="GameToolbar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="GameToolbar.ExpandedTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+</resources>

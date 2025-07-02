@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Predefined interests for user profiles -->
+    <string-array name="predefined_interests">
+        <item>Music</item>
+        <item>Sports</item>
+        <item>Tech</item>
+        <item>Art</item>
+        <item>Food</item>
+        <item>Travel</item>
+        <item>Reading</item>
+        <item>Outdoors</item>
+        <item>Movies</item>
+        <item>Gaming</item>
+        <!-- Add more interests as needed -->
+    </string-array>
+</resources>

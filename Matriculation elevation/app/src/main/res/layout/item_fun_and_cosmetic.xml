@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fun_cosmetic_settings_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:strokeColor="@color/green"
+    app:strokeWidth="1dp"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewFunCosmetic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif"
+            android:text="Fun &amp; Cosmetic"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <!-- Fun Fact Button -->
+        <Button
+            android:id="@+id/button_fun_fact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Tell Me a Fun Fact" />
+
+        <TextView
+            android:id="@+id/funFact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif"
+            android:text="Hi"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <!-- Joke Button -->
+        <Button
+            android:id="@+id/button_tell_joke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Crack a Joke" />
+
+        <TextView
+            android:id="@+id/joke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <!-- Toggle Silly Sound Effects -->
+        <Button
+            android:id="@+id/button_sound_effects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable Silly Sound FX" />
+
+
+        <!-- New Setting: Toggle Disco Lights -->
+        <Switch
+            android:id="@+id/switch_disco_lights"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn On Disco Lights 🎇" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

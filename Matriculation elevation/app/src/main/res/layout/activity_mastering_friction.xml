@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="16dp"
+    android:layoutDirection="ltr">
+
+    <TextView
+        android:id="@+id/frictionDescription"
+        style="@style/BodyTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Friction is a force that opposes motion between two surfaces in contact. It is caused by microscopic irregularities on the surfaces." />
+
+    <TextView
+        android:id="@+id/newtonSecondLawDescription"
+        style="@style/BodyTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frictionDescription"
+        android:text="Newton's Second Law states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass (F = ma)." />
+
+    <TextView
+        android:id="@+id/xyDivisionDescription"
+        style="@style/BodyTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newtonSecondLawDescription"
+        android:text="We divide the forces into x and y components to analyze the horizontal and vertical forces separately." />
+
+    <TextView
+        android:id="@+id/frictionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/xyDivisionDescription"
+        android:layout_centerHorizontal="true"
+        android:text="Friction Coefficient: 0.0" />
+
+    <SeekBar
+        android:id="@+id/frictionSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frictionTextView"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/forceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frictionSeekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Applied Force: 0 N" />
+
+    <SeekBar
+        android:id="@+id/forceSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forceTextView"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/massTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forceSeekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Mass: 1 kg" />
+
+    <SeekBar
+        android:id="@+id/massSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/massTextView"
+        android:max="100"
+        android:min="1" />
+
+    <Button
+        android:id="@+id/startButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/massSeekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Start Simulation" />
+
+    <TextView
+        android:id="@+id/timeUntilStopped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startButton1"
+        android:layout_centerHorizontal="true"
+        android:text="The simulation will be 5 seconds" />
+
+    <RelativeLayout
+        android:id="@+id/simulationContainer"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/startButton1"
+        android:layout_marginTop="16dp">
+
+        <View
+            android:id="@+id/surfaceImage"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="103dp"
+            android:background="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/ballImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="53dp"
+            android:src="@drawable/ball" />
+
+        <LinearLayout
+            android:id="@+id/vectorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/continueButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Continue to Next Section" />
+</RelativeLayout>

@@ -109,7 +109,7 @@ public class LogInActivity extends AppCompatActivity {
             for (UserInfo user : users) {
                 if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                     Intent intent = new Intent(this, MainActivity.class);
-                    intent.putExtra(Constants.USER_NAME, user.getUsername().equals(username));
+                    intent.putExtra(Constants.USER_NAME, username);
                     startActivity(intent);
                     return true;
                 }

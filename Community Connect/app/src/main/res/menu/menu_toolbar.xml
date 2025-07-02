@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Global Search (if applicable across multiple sections) -->
+    <item
+        android:id="@+id/action_go_back"
+        android:icon="@drawable/ic_arrow_back_white"
+        android:title="@string/go_back"
+        app:showAsAction="ifRoom"
+        />
+
+    <!-- General Settings for the app -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/setting_icon"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom"
+        android:contentDescription="@string/settings_content_description" />
+
+    <!-- Help or About Section -->
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/information_icon"
+        android:title="@string/help"
+        app:showAsAction="ifRoom"
+        android:contentDescription="@string/help_content_description" />
+
+
+</menu>

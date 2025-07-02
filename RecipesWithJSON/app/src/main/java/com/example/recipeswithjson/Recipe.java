@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import java.io.Serializable;
 
 public class Recipe implements Serializable {
+
+
     private String name;
     private String instructions;
     private String dishType;
@@ -31,6 +33,26 @@ public class Recipe implements Serializable {
         }
     }
 
+    public JSONObject toJSONObject(){
+        JSONObject recipeObject = new JSONObject();
+
+        try{
+            recipeObject.put(Constants.NAME, this.name);
+            recipeObject.put(Constants.INSTRUCTIONS, this.instructions);
+            recipeObject.put(Constants.DISH_TYPE, this.dishType);
+            recipeObject.put(Constants.IS_VEGAN, this.vegan);
+            recipeObject.put(Constants.IS_FAVORITE, this.isFavorite);
+
+            return recipeObject;
+        } catch (JSONException e) {
+            return null;
+            //throw new RuntimeException(e);
+        }
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
     public String getName() {
         return name;
     }

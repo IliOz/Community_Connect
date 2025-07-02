@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="These equations describe the motion of objects under constant acceleration:"
+            style="@style/BodyTextStyle" />
+
+        <TextView
+            android:id="@+id/equationsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="\n
+            1. v = v0 + at\n
+            2. x = x0 + v0t + 1/2at^2\n
+            3. v^2 = v0^2 + 2a(x - x0)\n
+            4. x = x0 + 1/2(v0 + v)t\n
+            "
+            style="@style/BodyTextStyle"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/explanationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="\n
+            Where:\n
+            v = final velocity\n
+            v0 = initial velocity\n
+            a = acceleration\n
+            t = time\n
+            x = final position\n
+            x0 = initial position\n
+            "
+            style="@style/BodyTextStyle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter velocity and acceleration:"
+            style="@style/BodyTextStyle"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <View
+                    android:id="@+id/xAxis"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/ball"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/ball" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/velocityInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Initial Velocity (m/s)"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/accelerationInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Acceleration (m/s²)"
+                android:inputType="numberDecimal|numberSigned" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/timeLimitText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Time Limit: 5s"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/startButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/distanceTraveled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Distance: ???m"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/continueButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Continue to Next Section" />
+
+    </LinearLayout>
+</ScrollView>

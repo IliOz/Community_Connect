@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:text="Sandbox: Ball rolling on a straight line with constant acceleration/deceleration" />
+
+        <com.example.myfinalproject.gamesActivities.Physics.BallGameSurfaceView
+            android:id="@+id/ball_game_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
+
+        <com.example.myfinalproject.gamesActivities.Physics.BallGameSurfaceView
+            android:id="@+id/ball_with_friction_game_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/continue_to_next_activity"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Continue" />
+
+    </LinearLayout>
+
+</ScrollView>

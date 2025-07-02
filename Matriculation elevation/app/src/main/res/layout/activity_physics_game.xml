@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/BodyTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="Kinematics studies motion (speed, displacement, acceleration), underpinned by Newton's Laws." />
+
+        <TextView
+            style="@style/BodyTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Newton's First Law: Objects maintain motion unless acted upon by a net force. (Inertia, ΣF=0)" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:contentDescription="Illustration of objects moving in a straight line at constant speed"
+            android:src="@drawable/balls_go_in_straight_line_constant_speed" />
+
+        <TextView
+            style="@style/BodyTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Newton's Second Law: Force equals mass times acceleration (ΣF = ma). " />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Illustration of an object accelerating"
+            android:scaleType="fitXY"
+            android:src="@drawable/ball_accelerate" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Illustration of an object decelerating"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ball_decelerate" />
+
+        <TextView
+            style="@style/BodyTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Newton's Third Law: For every action, there's an equal and opposite reaction. Forces come in pairs." />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Illustration of Newton's Third Law"
+            android:scaleType="fitCenter"
+            android:src="@drawable/newtons_third_law_image" />
+
+        <Button
+            android:id="@+id/continueButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Continue to Next Section" />
+
+    </LinearLayout>
+</ScrollView>

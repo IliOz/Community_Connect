@@ -1,0 +1,74 @@
+<!-- res/drawable/ic_dj_filter.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Left Ear Cup -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M14,18
+                         a6,6 0 0 1 6,-6
+                         h2
+                         v12
+                         h-2
+                         a6,6 0 0 1 -6,-6z"/>
+
+    <!-- Right Ear Cup -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M28,12
+                         h2
+                         a6,6 0 0 1 6,6
+                         a6,6 0 0 1 -6,6
+                         h-2z"/>
+
+    <!-- Headband (Curved) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#CCAA00"
+        android:strokeWidth="2"
+        android:pathData="M21,12
+                         q4,-4 8,0"/>
+
+    <!-- Slider Controls (3 horizontal bars with knobs) -->
+    <!-- Red Slider -->
+    <path
+        android:fillColor="#FF3B30"
+        android:pathData="M34,26
+                         h10
+                         v4
+                         h-10z"/>
+    <path
+        android:fillColor="#FF3B30"
+        android:pathData="M39,28
+                         a2,2 0 1 1 -4,0
+                         a2,2 0 1 1 4,0"/>
+
+    <!-- Green Slider -->
+    <path
+        android:fillColor="#34C759"
+        android:pathData="M34,32
+                         h8
+                         v4
+                         h-8z"/>
+    <path
+        android:fillColor="#34C759"
+        android:pathData="M38,34
+                         a2,2 0 1 1 -4,0
+                         a2,2 0 1 1 4,0"/>
+
+    <!-- Blue Slider -->
+    <path
+        android:fillColor="#007AFF"
+        android:pathData="M34,38
+                         h6
+                         v4
+                         h-6z"/>
+    <path
+        android:fillColor="#007AFF"
+        android:pathData="M37,40
+                         a2,2 0 1 1 -4,0
+                         a2,2 0 1 1 4,0"/>
+</vector>

@@ -1,0 +1,48 @@
+<!-- res/drawable/drawable_open_box.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+
+    <!-- Bottom side of the box -->
+    <path
+        android:pathData="M 90 90 L 40 90"
+        android:strokeWidth="3"
+        android:strokeColor="@color/black" />
+
+
+    <path
+        android:pathData="M 40 91.5 L 40 25"
+        android:strokeWidth="3"
+        android:strokeColor="@color/black" />
+
+
+    <!-- Reflected Partial Left side (now the Partial Right side) -->
+    <path
+        android:pathData="M 90 90 L 90 8.5"
+        android:strokeWidth="3"
+        android:strokeColor="@color/black" />
+
+
+    <!-- Shortened Refracted main vertical line (originally M 10 90 L 10 10) -->
+    <path
+        android:pathData="M 10 90 L 10 8.5"
+        android:strokeWidth="3"
+        android:strokeColor="@color/black" />
+
+    <!-- Shortened Refracted Bottom side of the box (now the Top side) (originally M 10 10 L 90 10) -->
+    <path
+        android:pathData="M 10 10 L 60 10"
+        android:strokeWidth="3"
+        android:strokeColor="@color/black" />
+
+    <!-- Shortened Refracted Left side (partially open) - now the upper part of the right side (originally M 90 10 L 90 30) -->
+    <path
+        android:pathData="M 60 8.5 L 60 80"
+        android:strokeWidth="3"
+        android:strokeColor="@color/black" />
+
+
+</vector>

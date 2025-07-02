@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"> <!-- THIS LINE IS CRUCIAL -->
+    <item android:color="@color/colorPrimary" android:state_checked="true" />
+    <item android:color="@color/chip_default_background" android:state_checked="false" />
+    <item android:color="@color/chip_default_background" /> <!-- Default state when not checked -->
+</selector>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+
+        <!-- TEXT COLORS -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+
+        <!-- MATERIAL 3 NECESSARY COLORS -->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorError">#B00020</item>
+
+        <!-- TEXT INPUT STYLE -->
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="startIconTint">@color/text_secondary_light</item>
+    </style>
+
+    <style name="BottomNavActive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="BottomNavInactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Fixed: Added closing tag for Widget.Material3.Chip.Filter -->
+    <style name="Widget.Material3.Chip.Filter" parent="Base.Widget.Material3.Chip">
+        <!-- If this style is meant to have specific attributes, add them here. -->
+        <!-- Otherwise, it inherits from Base.Widget.Material3.Chip -->
+    </style>
+
+    <style name="Widget.App.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <!-- You can customize various attributes here. For example: -->
+
+        <!-- Change the color of the border (stroke) -->
+        <!-- <item name="strokeColor">@color/your_custom_color</item> -->
+
+        <!-- Change the width of the border -->
+        <item name="strokeWidth">2dp</item>
+        <!-- <item name="strokeWidth">2dp</item> --> <!-- This was a duplicate, commented out -->
+
+        <!-- Change the text color -->
+        <!-- <item name="android:textColor">@color/your_custom_color</item> -->
+
+        <!-- Change the roundness of the corners -->
+        <item name="cornerRadius">24dp</item>
+        <!-- <item name="cornerRadius">24dp</item> --> <!-- This was a duplicate, commented out -->
+    </style>
+
+    <style name="CustomProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="indicatorColor">@color/teal_700</item>
+        <item name="trackThickness">4dp</item>
+    </style>
+
+    <style name="ChipStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="IconButton">
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">@null</item>
+        <item name="android:padding">4dp</item>
+    </style>
+</resources>

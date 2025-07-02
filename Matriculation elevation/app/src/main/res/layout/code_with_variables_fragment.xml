@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF1"
+    android:orientation="vertical"
+    android:layoutDirection="ltr">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:text="Introduction to Basic Variables in Java"
+                android:textColor="#212121"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- Explanation -->
+            <TextView
+                android:id="@+id/explanationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="In Java, we use variables to store data. Here are the basic types:\n\n• int: Stores whole numbers (e.g., 25).\n• float: Stores numbers with decimals (e.g., 19.99f).\n• double: Stores numbers with decimals more precisely (e.g., 3.14159). \n• String: can store characters and words or a pharse"
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+            <!-- Examples Section -->
+            <TextView
+                android:id="@+id/examplesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:text="Examples:"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/examplesText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#EEEEEE"
+                android:padding="16dp"
+                android:text="1. int age = 25;\n\n2. float price = 19.99f;\n\n3. double pi = 3.14159;\n\n4. String name = &quot;John&quot;;"
+                android:textColor="#FF5722"
+                android:textSize="16sp" />
+
+            <!-- Exercise Section -->
+            <TextView
+                android:id="@+id/exerciseHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:text="Exercise:"
+                android:textColor="#212121"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/exerciseText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="Select the correct code snippet to declare an int variable for storing your age."
+                android:textColor="#424242"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/successOrFailureMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#4CAF50"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Well done, correct answer!"
+                android:textColor="#388E3C"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+
+            <RadioGroup
+                android:id="@+id/selectCorrectAnswerVariableExercise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/option1Variable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="int age = 25;"
+                    android:textColor="#424242" />
+
+                <RadioButton
+                    android:id="@+id/option2Variable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="float age = 25.0f;"
+                    android:textColor="#424242" />
+
+                <RadioButton
+                    android:id="@+id/option3Variable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="double age = '25';"
+                    android:textColor="#424242" />
+            </RadioGroup>
+
+            <!-- Next Button -->
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#FF9800"
+                android:padding="10dp"
+                android:text="Next"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<!-- res/drawable/search_background_glow.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="56dp"
+    android:viewportWidth="200"
+    android:viewportHeight="56">
+    <!-- Rounded rectangle with neon purple outline -->
+    <path
+        android:fillColor="#FFFFFF"
+    android:pathData="M10,0H190A10,10 0 0 1 200,10V46A10,10 0 0 1 190,56H10A10,10 0 0 1 0,46V10A10,10 0 0 1 10,0Z"/>
+    <!-- Glow effect (outer stroke) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F5E6FF"
+    android:strokeWidth="2"
+    android:pathData="M10,0H190A10,10 0 0 1 200,10V46A10,10 0 0 1 190,56H10A10,10 0 0 1 0,46V10A10,10 0 0 1 10,0Z"/>
+</vector>
